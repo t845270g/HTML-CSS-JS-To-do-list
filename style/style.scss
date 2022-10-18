@@ -1,0 +1,200 @@
+@font-face{font-family: "my";src:url("../wt014.ttf")}
+*{margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "my",sans-serif;}
+h1{font-weight:normal;}
+body{
+  display: flex;
+  align-items:center ;
+  flex-direction: column;
+  
+  
+  
+  .bk{
+    
+    position: fixed;
+    bottom:0;right:0;
+    z-index:-1 ;
+    width: 100vw;
+    height: 100vh;
+    background:linear-gradient(0deg,rgb(241, 78, 121),rgb(243, 243, 94)) ;
+  }
+}
+
+header{
+  margin-bottom: 1rem;margin-top: 1rem;
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  h1{
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+form{
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  button{border-radius: 50%;height: 35px;width: 35px;margin-left: 2rem;background-color: rgb(255, 0, 102);&:hover{background-color: rgb(82, 13, 230);transition: all 0.2s ease;animation: butBig 0.2s alternate forwards;}}
+  input{
+    border: none;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    font-size: 1.75rem;
+    margin: 0.5rem 0.3rem;
+    -moz-appearance:textfield
+  }
+  input.text{min-width:30vw;animation: butSma 0.2s alternate forwards;margin-right: 3rem;word-wrap:break-word;}
+  input[type="date"]{width: 230px;background-color: rgba(0, 0, 0, 0);color: rgb(255, 255, 255);cursor: pointer;animation: butSma 0.2s alternate forwards;}
+  input[type="date"]::-webkit-datetime-edit-text
+//直接複製兩組瀏覽器程式碼來用:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_arrow_number
+  // chrome.safari.edge.opera瀏覽器，停用輸入選擇紐
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+
+button{
+  animation: butSma 0.2s alternate forwards;
+  border: none;
+  padding:0.2rem 0.5rem;
+  font-size: 1.45rem;
+  cursor: pointer;
+  background-color: rgb(255, 10, 104);
+  color: white;
+  
+}
+
+div.bb{
+  width: 50vw;
+  display: flex;
+  margin-bottom: 1rem;
+  .le{width: 50%;
+    .new{border-radius: 10px;&:hover{background-color: rgb(82, 13, 230);animation: butBig 0.3s alternate forwards;transition: all 0.3s ease;}}
+      }
+
+
+  .ri{width: 50%;display: flex;justify-content: end;
+      .check{margin-right: 1.01rem;border-radius: 50%;height: 40px;width: 40px;background-color:rgb(108, 106, 253)}
+      .remove{margin-right: 1.01rem;background-color:rgb(247, 81, 81);border-radius: 50%;height: 40px;width: 40px;&:hover{background-color: rgb(255,0,0);animation: butBig 0.2s alternate forwards;}}
+      .clear{margin-right: 1.01rem;border-radius: 50%;height: 40px;width: 40px;background-color:rgb(253, 241, 106);color: black;&:hover{background-color: rgb(255,0,0);color: white;animation: butBig 0.2s alternate forwards;}}
+    }
+
+}
+
+
+section{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  div.selectng{background-color: red;word-wrap:break-word;}
+  div.done{
+    // pointer-events: none;//出現這個類別的標籤時，就不能再發生事件了
+    opacity: 0.3;
+    text-decoration: line-through;
+    text-decoration-thickness:0.2rem;
+    transition:all 0.5s ease;
+  }
+  div.todo{
+    cursor: pointer;
+    flex-wrap: wrap;
+    transition:all 0.5s ease;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{display: flex;
+      flex-wrap: wrap;
+      color:black;
+      padding-left:0.5rem;
+      padding-right:0.5rem;
+      margin: 0.2rem 0rem;
+      font-size: 1.75rem;
+    }
+    p.todo-time{font-size:1.5rem;color: rgb(255, 255, 255);width: 160px;}
+    p.todo-text{
+                background-color: white;
+                width:60%;
+                word-wrap:break-word;
+                font-family: "my";
+                font-size:1.75rem;}
+    div.button{
+                button.check{
+                  background-color: rgb(0, 255, 17);
+                  margin: 0rem 0.3rem;&:hover{animation: butBig 0.2s alternate forwards;}
+                }
+                button.remove{
+                  background-color: rgb(255, 0, 0);
+                  margin: 0rem 0.3rem;&:hover{animation: butBig 0.2s alternate forwards;}
+                }
+    }
+    
+  }
+}
+
+// 當按鈕被選時，裡面包含了按鈕與子標籤i標籤，所以其實監聽的是一個按鈕的容器，點到i標籤會反傳i標籤
+//沒點到i標籤才會返傳容器本身，所以要停用i標籤被點選的事件，才能讓每次典籍都是點到按鈕本身
+//https://www.oxxostudio.tw/articles/201409/pointer-events.html
+i,p.todo-time,p.todo-text,div.button{
+  pointer-events:none;
+}
+
+div.todo:hover{animation: butBig 0.2s alternate forwards;}
+input.text:hover{animation: butBig 0.2s alternate forwards;}
+input[type="date"]:hover{animation: butBig 0.2s alternate forwards;}
+
+@keyframes butBig {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
+  }
+}
+@keyframes butSma {
+  from{
+    transform: scale(1.1);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(0);
+  }
+}
+@keyframes tu{
+  from{
+  }
+  to{
+    transform: scale(1);
+    background-color: red;
+  }
+}
+

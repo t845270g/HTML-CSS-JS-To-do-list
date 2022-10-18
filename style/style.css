@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "my";
+  src: url("../wt014.ttf");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "my", sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body .bk {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, rgb(241, 78, 121), rgb(243, 243, 94));
+}
+
+header {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+form {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+}
+form button {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  margin-left: 2rem;
+  background-color: rgb(255, 0, 102);
+}
+form button:hover {
+  background-color: rgb(82, 13, 230);
+  transition: all 0.2s ease;
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+form input {
+  border: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.75rem;
+  margin: 0.5rem 0.3rem;
+  -moz-appearance: textfield;
+}
+form input.text {
+  min-width: 30vw;
+  -webkit-animation: butSma 0.2s alternate forwards;
+          animation: butSma 0.2s alternate forwards;
+  margin-right: 3rem;
+  word-wrap: break-word;
+}
+form input[type=date] {
+  width: 230px;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  -webkit-animation: butSma 0.2s alternate forwards;
+          animation: butSma 0.2s alternate forwards;
+}
+form input[type=date]::-webkit-datetime-edit-text input::-webkit-outer-spin-button,
+form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  -webkit-animation: butSma 0.2s alternate forwards;
+          animation: butSma 0.2s alternate forwards;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.45rem;
+  cursor: pointer;
+  background-color: rgb(255, 10, 104);
+  color: white;
+}
+
+div.bb {
+  width: 50vw;
+  display: flex;
+  margin-bottom: 1rem;
+}
+div.bb .le {
+  width: 50%;
+}
+div.bb .le .new {
+  border-radius: 10px;
+}
+div.bb .le .new:hover {
+  background-color: rgb(82, 13, 230);
+  -webkit-animation: butBig 0.3s alternate forwards;
+          animation: butBig 0.3s alternate forwards;
+  transition: all 0.3s ease;
+}
+div.bb .ri {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+div.bb .ri .check {
+  margin-right: 1.01rem;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(108, 106, 253);
+}
+div.bb .ri .remove {
+  margin-right: 1.01rem;
+  background-color: rgb(247, 81, 81);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+div.bb .ri .remove:hover {
+  background-color: rgb(255, 0, 0);
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+div.bb .ri .clear {
+  margin-right: 1.01rem;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(253, 241, 106);
+  color: black;
+}
+div.bb .ri .clear:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section div.selectng {
+  background-color: red;
+  word-wrap: break-word;
+}
+section div.done {
+  opacity: 0.3;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+  transition: all 0.5s ease;
+}
+section div.todo {
+  cursor: pointer;
+  flex-wrap: wrap;
+  transition: all 0.5s ease;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section div.todo p {
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin: 0.2rem 0rem;
+  font-size: 1.75rem;
+}
+section div.todo p.todo-time {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  width: 160px;
+}
+section div.todo p.todo-text {
+  background-color: white;
+  width: 60%;
+  word-wrap: break-word;
+  font-family: "my";
+  font-size: 1.75rem;
+}
+section div.todo div.button button.check {
+  background-color: rgb(0, 255, 17);
+  margin: 0rem 0.3rem;
+}
+section div.todo div.button button.check:hover {
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+section div.todo div.button button.remove {
+  background-color: rgb(255, 0, 0);
+  margin: 0rem 0.3rem;
+}
+section div.todo div.button button.remove:hover {
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+
+i, p.todo-time, p.todo-text, div.button {
+  pointer-events: none;
+}
+
+div.todo:hover {
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+
+input.text:hover {
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+
+input[type=date]:hover {
+  -webkit-animation: butBig 0.2s alternate forwards;
+          animation: butBig 0.2s alternate forwards;
+}
+
+@-webkit-keyframes butBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes butBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes butSma {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes butSma {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes tu {
+  to {
+    transform: scale(1);
+    background-color: red;
+  }
+}
+@keyframes tu {
+  to {
+    transform: scale(1);
+    background-color: red;
+  }
+}/*# sourceMappingURL=style.css.map */

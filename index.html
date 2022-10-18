@@ -1,0 +1,57 @@
+<!-- https://ysnweb.net/2020/01/seo-guide/html-meta-tag-seo/ -->
+<!DOCTYPE html>
+<html lang="zh-Hant">   <!-- html要添加屬性lang，定義網頁的語言en為英文，zh-Hant為繁體中文 -->
+    <head>
+        <meta charset="utf-8"/>         <!-- meta標籤定義整個html的整體屬性，charset設定文字編碼格式 -->
+        <meta name="viewport" content="width=device-width,intial-scale=1"/>
+<!-- 定義屬性名稱為viewport(整個視窗)的網頁寬度為裝置寬度(width=device-width)，這樣才可以隨視窗大小自動調整網頁排版intial-scale=1 改變視窗大小時，內文比例不變 -->
+        <meta name="author" content="YU"/>
+        <meta name="robots" content="index,follow"/><!-- 如果不想被搜尋到，就改成noindex,nofollow -->
+        <meta name="description"content="代辦事項功能製作"/>
+
+        <base target="_self"><!-- 分頁由自身跳轉 -->
+        <link rel="stylesheet" href="./style/style.css"><!-- 連接css設定檔 -->
+        <!-- google font字體新增在css後面 -->
+        <!-- <link rel="icon" href="icon位置">自訂小標圖片 -->
+        <title>待辦清單</title>
+
+        <link rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+         crossorigin="anonymous" 
+         referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        
+        <header>
+            <h1>My List</h1>
+        </header>
+        <form action="">
+            <input type="text" class="text" id="">
+            <div class="ss">
+                <input type="date" name="date" id="dateDefault" value="年-月-日"  required>
+                <button>+</button>
+            </div>
+
+        </form>
+        <br>
+        <br>
+        <div class="bb">
+            <div class="le">
+                <!-- <button class="sort">Sort By Time</button> -->
+                <button class="new">Sort By Time</button>
+            </div>
+            
+            <div class="ri">
+                <button class="check"><i class="fa-solid fa-check"></i></button>
+                <button class="remove"><i class="fa-solid fa-trash"></i></button>
+                <button class="clear">X</button>
+            </div>
+        </div>
+            
+        <section></section>
+        <div class="bk"></div>
+        
+    </body>
+    <script src="./app.js"></script>
+</html>
