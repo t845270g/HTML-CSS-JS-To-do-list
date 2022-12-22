@@ -43,7 +43,7 @@ header h1 {
 }
 
 form {
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
