@@ -45,13 +45,12 @@ form{
   button{border-radius: 50%;height: 35px;width: 35px;margin-left: 2rem;background-color: rgb(255, 0, 102);&:hover{background-color: rgb(82, 13, 230);transition: all 0.2s ease;animation: butBig 0.2s alternate forwards;}}
   input{
     border: none;
-    padding-left:0.5rem;
-    padding-right:0.5rem;
+    padding:0 0.5rem;
     font-size: 1.75rem;
     margin: 0.5rem 0.3rem;
     -moz-appearance:textfield
   }
-  input.text{min-width:30vw;animation: butSma 0.2s alternate forwards;margin-right: 3rem;word-wrap:break-word;}
+  input.text{min-width:30vw;animation: butSma 0.2s alternate forwards;word-wrap:break-word;}
   input[type="date"]{width: 230px;background-color: rgba(0, 0, 0, 0);color: rgb(255, 255, 255);cursor: pointer;animation: butSma 0.2s alternate forwards;}
   input[type="date"]::-webkit-datetime-edit-text
 //直接複製兩組瀏覽器程式碼來用:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_arrow_number
@@ -77,17 +76,19 @@ button{
 
 div.bb{
   width: 50vw;
+  flex-wrap: wrap;
   display: flex;
-  margin-bottom: 1rem;
-  .le{width: 50%;
-    .new{border-radius: 10px;&:hover{background-color: rgb(82, 13, 230);animation: butBig 0.3s alternate forwards;transition: all 0.3s ease;}}
+  
+  .le{margin: 0.5rem 0;width: 50%;display: flex;justify-content: center;flex-grow: 1;min-width: 185px;}
+  .lee{
+    .new{width:100%;border-radius: 10px;&:hover{background-color: rgb(82, 13, 230);animation: butBig 0.3s alternate forwards;transition: all 0.3s ease;}}
       }
 
-
-  .ri{width: 50%;display: flex;justify-content: end;
+  .rii{width: 50%;display: flex;justify-content:space-evenly;flex-grow:1;min-width:185px;margin: 0.5rem 0;}
+  .ri{ 
       .check{margin-right: 1.01rem;border-radius: 50%;height: 40px;width: 40px;background-color:rgb(108, 106, 253)}
       .remove{margin-right: 1.01rem;background-color:rgb(247, 81, 81);border-radius: 50%;height: 40px;width: 40px;&:hover{background-color: rgb(255,0,0);animation: butBig 0.2s alternate forwards;}}
-      .clear{margin-right: 1.01rem;border-radius: 50%;height: 40px;width: 40px;background-color:rgb(253, 241, 106);color: black;&:hover{background-color: rgb(255,0,0);color: white;animation: butBig 0.2s alternate forwards;}}
+      .clear{border-radius: 50%;height: 40px;width: 40px;background-color:rgb(253, 241, 106);color: black;&:hover{background-color: rgb(255,0,0);color: white;animation: butBig 0.2s alternate forwards;}}
     }
 
 }
